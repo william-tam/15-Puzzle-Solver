@@ -1,3 +1,5 @@
+
+
 class PuzzleSolver:
     def __init__(self, strategy):
         """
@@ -18,7 +20,6 @@ class PuzzleSolver:
             raise RuntimeError('This puzzle is not solvable')
 
         self._strategy.do_algorithm()
-
 
 class Strategy:
     num_expanded_nodes = 0
@@ -272,7 +273,7 @@ class Puzzle:
 
 
 if __name__ == '__main__':
-    puzzle = Puzzle([[1, 2, 3, 4], [5, 6, 7, 8], [0, 10, 11, 12], [9, 13, 14, 15]])
+    puzzle = Puzzle([[0,1,3], [4,2,5], [7,8,6]])
 
     for strategy in [BreadthFirst, AStar]:
         p = PuzzleSolver(strategy(puzzle))
